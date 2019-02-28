@@ -8,11 +8,17 @@ public class RomanAdditionner {
 		int chiffreB = roman.getNumeral(b);
 		if (op.equals("+")) {
 			int add = chiffreA+chiffreB;
-			
+			res = numeral.getRoman(add);
 		} else if (op.equals("-")) {
-			
+			int sou = chiffreA-chiffreB;
+			res = numeral.getRoman(sou);
 		}
 		
 		return res;
+	}
+	
+	public static void main (String[] args) {
+		String res = RomanAdditionner.compute("XX", "+", "MM");
+		System.out.println(res);
 	}
 }
