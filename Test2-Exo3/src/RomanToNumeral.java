@@ -17,17 +17,21 @@ public class RomanToNumeral {
 		for (int i = 0; i<=nombre.length()-1; i++) {
 			String lettre = nombre.charAt(i)+"";
 			int chiffre = this.Ci.get(lettre);
-			String lettreSuivante = nombre.charAt(i+1)+"";
-			int chiffreSuivant = this.Ci.get(lettreSuivante);
-			
-			//Conditions
-			if (chiffre >= chiffreSuivant) {
+			if (nombre.length() != 1) {
+				String lettreSuivante = nombre.charAt(i+1)+"";
+				int chiffreSuivant = this.Ci.get(lettreSuivante);	
+				//Conditions
+				if (chiffre >= chiffreSuivant) {
+					res += chiffre;
+				}
+				else {
+					res += chiffreSuivant-chiffre;
+					i=i+1;
+				}
+			} else {
 				res += chiffre;
 			}
-			else {
-				res += chiffreSuivant-chiffre;
-				i=i+1;
-			}
+			
 			
 			
 		}
@@ -37,7 +41,7 @@ public class RomanToNumeral {
 	
 	public static void main(String[] args) {
 		RomanToNumeral test = new RomanToNumeral();
-		int res = test.getNumeral("CMIV");
+		int res = test.getNumeral("C");
 		System.out.println(res);
 	}
 	

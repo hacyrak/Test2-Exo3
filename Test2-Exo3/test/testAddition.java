@@ -5,9 +5,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class testAddition {
-
+	RomanAdditionner calcul;
 	@Before
 	 public void setUp() throws Exception {
+		
 	 }
 	
 	
@@ -17,7 +18,7 @@ public class testAddition {
 
 	@Test
 	public void testAddition() {
-		fail("Not yet implemented");
+		assertEquals("CC",calcul.compute("C", "+", "M"));
 	}
 	
 	

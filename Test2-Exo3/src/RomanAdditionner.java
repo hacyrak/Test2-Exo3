@@ -18,7 +18,7 @@ public class RomanAdditionner {
 	}
 	
 	public static void main (String[] args) {
-		String res = RomanAdditionner.compute("XX", "+", "MM");
+		String res = RomanAdditionner.compute("X", "+", "M");
 		System.out.println(res);
 	}
 }
