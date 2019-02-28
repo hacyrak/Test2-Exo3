@@ -15,7 +15,6 @@ public class RomanToNumeral {
 	public int getNumeral(String nombre) {
 		int res = 0;
 		for (int i = 0; i<=nombre.length()-1; i++) {
-			System.out.println(nombre.charAt(i));
 			String lettre = nombre.charAt(i)+"";
 			int chiffre = this.Ci.get(lettre);
 			String lettreSuivante = nombre.charAt(i+1)+"";
@@ -27,8 +26,9 @@ public class RomanToNumeral {
 			}
 			else {
 				res += chiffreSuivant-chiffre;
+				i=i+1;
 			}
-			System.out.println(res);
+			
 			
 		}
 		return res;
@@ -37,7 +37,8 @@ public class RomanToNumeral {
 	
 	public static void main(String[] args) {
 		RomanToNumeral test = new RomanToNumeral();
-		test.getNumeral("XXXIV");
+		int res = test.getNumeral("CMIV");
+		System.out.println(res);
 	}
 	
 	
